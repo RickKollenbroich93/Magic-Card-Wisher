@@ -1,6 +1,6 @@
 //--------------- Import ---------------
 
-import type { Card } from '../types';
+import type { Card, allCard } from '../types';
 
 //--------------- Using an API ---------------
 
@@ -8,7 +8,7 @@ export async function getCard(name?: string): Promise<Card[]> {
   const response = await fetch(
     `https://api.magicthegathering.io/v1/cards/?name=${name ? name : ''}`
   );
-  const data = await response.json();
+  const data: allCard = await response.json();
   const cards = data.cards; //-----What we want from json
   console.log(cards);
 
