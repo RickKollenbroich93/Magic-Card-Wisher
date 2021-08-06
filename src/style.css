@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(55, 55, 55);
 }
 @font-face {
   font-family: magic;
@@ -23,17 +23,19 @@ body {
 .mainWrapper {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
 }
-@media only screen and (max-width: 1100px) {
+
+/* @media only screen and (max-width: 1100px) {
   .mainWrapper {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
     justify-content: center;
   }
-}
+} */
 .searchbar {
   font-family: var(--textFont);
   background-color: var(--cardBackground);
@@ -71,7 +73,10 @@ h2 {
 .headerimg {
   max-width: 500px;
 }
-
+p {
+  font-family: var(--textFont);
+  font-size: 1rem;
+}
 input:focus {
   outline-color: var(--red-prim);
 }

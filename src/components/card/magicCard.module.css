@@ -3,7 +3,7 @@
   border-radius: 20px;
   gap: 1rem;
   padding: 0.5rem;
-  min-width: 300px;
+  min-width: 400px;
   justify-self: center;
   border: 3px solid var(--cardBackground);
   background-image: linear-gradient(
@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    min-width: 350px;
     gap: 3rem;
     border: 3px solid var(--cardBackground);
     background-image: linear-gradient(
@@ -37,4 +38,8 @@
 .cardWrapper:hover {
   border-radius: 20px;
   border: 3px solid var(--red-prim);
+}
+p {
+  font-family: var(--textFont);
+  font-size: 1rem;
 }
