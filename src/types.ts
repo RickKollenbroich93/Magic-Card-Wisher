@@ -3,7 +3,7 @@ export type Card = {
   name: string; //cardName
   imageUrl: string; //Imglink
   cmc: number; //ManaCosts
-  //   color: string[]; //ColorOfCard
+  color: string[]; //ColorOfCard
   rarity: string;
   set: string;
 };

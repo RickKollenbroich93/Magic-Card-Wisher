@@ -1,15 +1,15 @@
 //--------------- Import ---------------
 
-import type { allCard, Card } from '../types';
+import type { Card } from '../types';
 
 //--------------- Using an API ---------------
 
 export async function getCard(name?: string): Promise<Card[]> {
   const response = await fetch(
-    `https://rickandmortyapi.com/api/character/?name=${name ? name : ''}`
+    `https://api.magicthegathering.io/v1/cards/?name=${name ? name : ''}`
   );
-  const data /*: allCharactersApi*/ = await response.json();
-  const cards = data.results;
+  const data = await response.json();
+  const cards = data.cards; //-----What we want from json
   console.log(cards);
 
   //--------------- We only want to get what we need ---------------
@@ -21,6 +21,7 @@ export async function getCard(name?: string): Promise<Card[]> {
       cmc: card.cmc,
       rarity: card.rarity,
       set: card.set,
+      color: card.colors,
     };
     return formattCard;
   });
