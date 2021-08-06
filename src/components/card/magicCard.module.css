@@ -1,0 +1,11 @@
+.cardWrapper {
+  display: flex;
+  max-width: 720px;
+  border-radius: 20px;
+  gap: 3rem;
+  border: 3px solid var(--cardBackground);
+  background-color: var(--cardBackground);
+}
+.textWrapper {
+  padding-left: 1rem;
+}
