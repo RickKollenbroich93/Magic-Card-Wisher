@@ -7,3 +7,5 @@ export type Card = {
   rarity: string;
   set: string;
 };
+
+// export type allCard = {};
