@@ -19,6 +19,8 @@ body {
   --cardBackground: rgb(220, 220, 220);
   --red-prim: #ff2d2d;
   --fire-prim: rgb(244, 227, 133);
+  --magic-orange: rgb(255, 118, 59);
+  --magic-blue: rgb(109, 228, 255);
 }
 .mainWrapper {
   display: grid;
@@ -79,4 +81,26 @@ p {
 }
 input:focus {
   outline-color: var(--red-prim);
+}
+.scrollUp {
+  text-decoration: none;
+  background-color: rgba(255, 166, 0, 0.7);
+  width: 100px;
+  font-size: 2rem;
+  position: -webkit-sticky;
+  position: fixed;
+  border-radius: 30px;
+  right: 10px;
+  bottom: 10px;
+}
+.scrollUp:hover {
+  border-radius: 30px;
+  border: solid 2px var(--fire-prim);
+  background-color: rgba(255, 166, 0);
+}
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
 }

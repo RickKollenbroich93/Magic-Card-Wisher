@@ -13,28 +13,42 @@ export function magicCard({
   rarity,
   set,
   color,
+  originalType,
 }: Card): HTMLElement {
   const character = createElement('div', {
     className: styles.cardWrapper,
     childElements: [
       createElement('img', {
-        src: imageUrl,
+        className: styles.cardImgSize,
+        src: `${
+          imageUrl === undefined ? './src/assets/cardback.jpeg' : imageUrl
+        } `,
       }),
       createElement('div', {
         className: styles.textWrapper,
         childElements: [
-          createElement('h3', { innerText: name }),
+          createElement('h3', {
+            className: styles.cardHeader,
+            innerText: name,
+          }),
+          createElement('p', {
+            innerText: 'Color: ' + color,
+          }),
           createElement('p', {
             innerText: 'Manacosts: ' + cmc,
           }),
           createElement('p', {
-            innerText: 'Color: ' + color,
+            innerText: 'Type: ' + originalType,
           }),
           createElement('p', {
             innerText: 'Rarity: ' + rarity,
           }),
           createElement('p', {
             innerText: 'Set: ' + set,
+          }),
+          createElement('button', {
+            innerText: 'ADD Card',
+            className: styles.glowOnHover,
           }),
         ],
       }),

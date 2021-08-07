@@ -13,6 +13,10 @@ const cardContainer = createElement('div', {
 });
 
 const app = document.querySelector<HTMLDivElement>('#app');
+const upButton = createElement('div', {
+  innerHTML: '<a href="#up"><span>🔝</span></a>',
+  className: 'scrollUp',
+});
 
 const searchbar = createElement('input', {
   placeholder: 'Search for Card',
@@ -38,13 +42,16 @@ const mainElement = createElement('main', {
     }),
     createElement('h1', {
       innerHTML: 'Card Whisher',
+      id: 'up',
     }),
 
     searchbar,
 
-    createElement('h2', { innerText: 'Cards' }),
+    createElement('h2', { innerText: 'Cards: ' }),
 
     cardContainer,
+
+    upButton,
   ],
 });
 

@@ -22,6 +22,7 @@ export async function getCard(name?: string): Promise<Card[]> {
       rarity: card.rarity,
       set: card.set,
       color: card.colors,
+      originalType: card.originalType,
     };
     return formattCard;
   });

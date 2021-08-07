@@ -6,6 +6,7 @@ export type Card = {
   color: string[]; //ColorOfCard
   rarity: string;
   set: string;
+  originalType: string;
 };
 
 export type allCard = {
