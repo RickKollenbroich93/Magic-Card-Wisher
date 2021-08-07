@@ -11,10 +11,12 @@ const cardContainer = createElement('div', {
   className: 'mainWrapper',
   childElements: cards.map((cards) => magicCard(cards)),
 });
-
+const icon1 = '🔎';
+const icon2 = '🔝';
+const iconText = 'Search';
 const app = document.querySelector<HTMLDivElement>('#app');
 const upButton = createElement('div', {
-  innerHTML: '<a href="#up"><span>🔝</span></a>',
+  innerHTML: '<a href="#up"><span>' + icon1 + '</span></a>',
   className: 'scrollUp',
 });
 
