@@ -1,17 +1,75 @@
 .cardWrapper {
   display: flex;
-  border-radius: 20px;
   gap: 1rem;
   padding: 0.5rem;
   min-width: 300px;
   justify-self: center;
-  border: 3px solid var(--cardBackground);
   background-image: linear-gradient(
     90deg,
     rgb(255, 255, 255),
     rgb(159, 159, 159)
   );
+  border: 3px solid var(--cardBackground);
+  outline: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
+
+.cardWrapper::before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #f00,
+    #ff7300,
+    #fffb00,
+    #ffe100,
+    #f70,
+    #ff2f00,
+    #ffb700,
+    #ffe100,
+    #f00
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.cardWrapper:active::after {
+  background: transparent;
+}
+
+.cardWrapper:hover::before {
+  opacity: 1;
+}
+
+.cardWrapper:hover::after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgb(255, 255, 255),
+    rgb(159, 159, 159)
+  );
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 425px) {
   .cardWrapper {
     display: flex;
@@ -52,10 +110,16 @@ p {
 .glowOnHover {
   width: 100px;
   height: 50px;
+  font-family: var(--textFont);
   border: 1px solid black;
   outline: none;
   color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
+  -webkit-text-stroke: 1px black;
+  background-image: linear-gradient(
+    90deg,
+    rgb(199, 199, 199),
+    rgb(255, 255, 255)
+  );
   cursor: pointer;
   position: relative;
   z-index: 0;
