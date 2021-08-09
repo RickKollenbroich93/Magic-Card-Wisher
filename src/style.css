@@ -45,6 +45,7 @@ h1 {
   font-size: 4rem;
   text-shadow: 3px 3px 10px var(--fire-prim);
   -webkit-text-stroke: 2px black;
+  margin-top: 0;
 }
 h2 {
   font-family: var(--textFont);
@@ -55,6 +56,7 @@ h2 {
   font-size: 3rem;
   text-shadow: 3px 3px 10px var(--fire-prim);
   -webkit-text-stroke: 2px black;
+  margin-bottom: 0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -98,4 +100,31 @@ a {
 }
 html {
   scroll-behavior: smooth;
+}
+.buttenWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.yourCardsBtn {
+  font-size: 1.5rem;
+  border: 2px solid var(--cardBackground);
+  border-radius: 10px;
+}
+.deleteBtn {
+  font-size: 1.5rem;
+  border: 2px solid var(--cardBackground);
+  border-radius: 10px;
+}
+.yourCardsBtn:hover {
+  border-color: green;
+}
+.deleteBtn:hover {
+  border-color: var(--red-prim);
+}
+@media only screen and (max-width: 425px) {
+  .buttenWrapper {
+    margin-right: 5rem;
+  }
 }

@@ -4,6 +4,7 @@ import { magicCard } from './components/card/magicCard';
 import { getCard } from './utils/api';
 import { parseJSONFromLocalStorage } from './utils/localStorage';
 import { Card } from './types';
+import styles from './components/card/magicCard.module.css';
 
 //--------------- Give the sorted Api data into my Function ---------------
 
@@ -36,9 +37,18 @@ const searchbar = createElement('input', {
     cardContainer.append(...filteredCardElements);
   },
 });
+const deleteYourCardsbtn = createElement('button', {
+  innerText: 'Delete Cardlist',
+  className: styles.glowOnHover,
+});
+deleteYourCardsbtn.onclick = () => deleteYourCards();
+function deleteYourCards() {
+  localStorage.clear();
+}
+
 const yourCardsbtn = createElement('button', {
   innerText: 'Your Cards',
-  className: 'yourCardsBtn',
+  className: styles.glowOnHover,
 });
 yourCardsbtn.onclick = () => showYourCards();
 
@@ -65,7 +75,10 @@ const mainElement = createElement('main', {
 
     searchbar,
 
-    yourCardsbtn,
+    createElement('div', {
+      className: 'buttenWrapper',
+      childElements: [yourCardsbtn, deleteYourCardsbtn],
+    }),
 
     createElement('h2', { innerText: 'Cards: ' }),
 
