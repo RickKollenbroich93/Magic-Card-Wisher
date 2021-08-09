@@ -1,4 +1,9 @@
-export function parseJSONFromLocalStorage(key, defaultValue) {
+import { Card } from '../types';
+
+export function parseJSONFromLocalStorage(
+  key: string,
+  defaultValue: Card[]
+): Card[] {
   const json = localStorage.getItem(key);
 
   if (!json) {
@@ -10,7 +15,7 @@ export function parseJSONFromLocalStorage(key, defaultValue) {
   return data;
 }
 
-export function stringifyJSONToLocalStorage(key, value) {
+export function stringifyJSONToLocalStorage(key: string, value: Card[]): void {
   const json = JSON.stringify(value);
   localStorage.setItem(key, json);
 }
