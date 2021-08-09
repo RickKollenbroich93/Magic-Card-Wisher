@@ -43,51 +43,6 @@ export type allCard = {
           name: string;
           language: string;
           multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
         }
       ];
       printings: string[];

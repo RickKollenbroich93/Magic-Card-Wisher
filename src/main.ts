@@ -2,6 +2,8 @@ import './style.css';
 import { createElement } from './utils/createElement';
 import { magicCard } from './components/card/magicCard';
 import { getCard } from './utils/api';
+import { parseJSONFromLocalStorage } from './utils/localStorage';
+import { Card } from './types';
 
 //--------------- Give the sorted Api data into my Function ---------------
 
@@ -34,6 +36,20 @@ const searchbar = createElement('input', {
     cardContainer.append(...filteredCardElements);
   },
 });
+const yourCardsbtn = createElement('button', {
+  innerText: 'Your Cards',
+  className: 'yourCardsBtn',
+});
+yourCardsbtn.onclick = () => showYourCards();
+
+function showYourCards() {
+  cardContainer.innerHTML = '';
+  const yourCards: Card[] = parseJSONFromLocalStorage('cards', []);
+
+  const yourCardsList = yourCards.map((card) => magicCard(card));
+
+  cardContainer.append(...yourCardsList);
+}
 
 const mainElement = createElement('main', {
   childElements: [
@@ -48,6 +64,8 @@ const mainElement = createElement('main', {
     }),
 
     searchbar,
+
+    yourCardsbtn,
 
     createElement('h2', { innerText: 'Cards: ' }),
 

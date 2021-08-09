@@ -3,9 +3,12 @@
 import styles from './magicCard.module.css';
 import type { Card } from '../../types';
 import { createElement } from '../../utils/createElement';
+import {
+  parseJSONFromLocalStorage,
+  stringifyJSONToLocalStorage,
+} from '../../utils/localStorage';
 
 //--------------- Create an characterCard with the right typ ---------------
-
 export function magicCard({
   name,
   imageUrl,
@@ -49,6 +52,22 @@ export function magicCard({
           createElement('button', {
             innerText: 'ADD Card',
             className: styles.glowOnHover,
+            onclick: function (event) {
+              event.preventDefault();
+              const wishCard: Card = {
+                name: name,
+                imageUrl: imageUrl,
+                cmc: cmc,
+                rarity: rarity,
+                set: set,
+                color: color,
+                originalType: originalType,
+              };
+              const oldCard = parseJSONFromLocalStorage('cards', []);
+              const newCards = [...oldCard, wishCard];
+              stringifyJSONToLocalStorage('cards', newCards);
+              console.log(wishCard);
+            },
           }),
         ],
       }),
@@ -57,3 +76,18 @@ export function magicCard({
 
   return character;
 }
+// const addCard = document.querySelector('.glowOnHover');
+
+// addCard.onclick = function (event) {
+//   const wishCard = {
+//     whishCardName: name,
+//     whishCardImageUrl: imageUrl,
+//     whishCardCmc: cmc,
+//     whishCardRarity: rarity,
+//     whishCardSet: set,
+//     whishCardColor: color,
+//     whishCardOriginalType: originalType,
+//   };
+//   // parseJSONFromLocalStorage('cards', wishCard);
+//   stringifyJSONToLocalStorage('cards', wishCard);
+// };
