@@ -45,6 +45,7 @@ async function run() {
   deleteYourCardsbtn.onclick = () => deleteYourCards();
   function deleteYourCards() {
     localStorage.clear();
+    location.reload();
   }
 
   const yourCardsbtn = createElement('button', {
