@@ -19,6 +19,8 @@ body {
   --cardBackground: rgb(220, 220, 220);
   --red-prim: #ff2d2d;
   --fire-prim: rgb(244, 227, 133);
+  --magic-orange: rgb(255, 118, 59);
+  --magic-blue: rgb(109, 228, 255);
 }
 .mainWrapper {
   display: grid;
@@ -27,15 +29,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
 }
-
-/* @media only screen and (max-width: 1100px) {
-  .mainWrapper {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
-} */
 .searchbar {
   font-family: var(--textFont);
   background-color: var(--cardBackground);
@@ -47,21 +40,24 @@ body {
 h1 {
   background-image: linear-gradient(90deg, yellow, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 4rem;
   text-shadow: 3px 3px 10px var(--fire-prim);
   -webkit-text-stroke: 2px black;
+  margin-top: 0;
 }
 h2 {
   font-family: var(--textFont);
   background-image: linear-gradient(90deg, yellow, red);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
   text-shadow: 3px 3px 10px var(--fire-prim);
   -webkit-text-stroke: 2px black;
+  margin-bottom: 0;
 }
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -76,7 +72,59 @@ h2 {
 p {
   font-family: var(--textFont);
   font-size: 1rem;
+  margin-top: 0;
 }
-input:focus {
-  outline-color: var(--red-prim);
+.searchbar:focus {
+  outline-style: none;
+  border: 2px solid var(--red-prim);
+}
+
+.scrollUp {
+  text-decoration: none;
+  background-color: rgba(255, 166, 0, 0.5);
+  width: 100px;
+  font-size: 2rem;
+  position: -webkit-sticky;
+  position: fixed;
+  border-radius: 30px;
+  right: 10px;
+  bottom: 10px;
+}
+.scrollUp:hover {
+  border-radius: 30px;
+  border: solid 2px var(--fire-prim);
+  background-color: rgba(255, 166, 0);
+}
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+.buttenWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.yourCardsBtn {
+  font-size: 1.5rem;
+  border: 2px solid var(--cardBackground);
+  border-radius: 10px;
+}
+.deleteBtn {
+  font-size: 1.5rem;
+  border: 2px solid var(--cardBackground);
+  border-radius: 10px;
+}
+.yourCardsBtn:hover {
+  border-color: green;
+}
+.deleteBtn:hover {
+  border-color: var(--red-prim);
+}
+@media only screen and (max-width: 425px) {
+  .buttenWrapper {
+    margin-right: 5rem;
+  }
 }

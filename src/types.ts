@@ -6,6 +6,7 @@ export type Card = {
   color: string[]; //ColorOfCard
   rarity: string;
   set: string;
+  originalType: string;
 };
 
 export type allCard = {
@@ -35,62 +36,9 @@ export type allCard = {
         {
           date: string;
           text: string;
-        },
-        {
-          date: string;
-          text: string;
-        },
-        {
-          date: string;
-          text: string;
         }
       ];
       foreignNames: [
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
-        {
-          name: string;
-          language: string;
-          multiverseid: number;
-        },
         {
           name: string;
           language: string;
