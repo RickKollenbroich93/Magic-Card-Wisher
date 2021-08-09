@@ -33,6 +33,7 @@ body {
   font-family: var(--textFont);
   background-color: var(--cardBackground);
   font-size: 2rem;
+  width: 15rem;
   border-color: var(--fire-prim);
   border-radius: 20px;
   box-shadow: 0 0 4px black;

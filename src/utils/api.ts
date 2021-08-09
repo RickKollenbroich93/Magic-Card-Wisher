@@ -14,17 +14,20 @@ export async function getCard(name?: string): Promise<Card[]> {
 
   //--------------- We only want to get what we need ---------------
 
-  const formattCards: Card[] = cards.map((card) => {
-    const formattCard: Card = {
-      name: card.name,
-      imageUrl: card.imageUrl,
-      cmc: card.cmc,
-      rarity: card.rarity,
-      set: card.set,
-      color: card.colors,
-      originalType: card.originalType,
-    };
-    return formattCard;
-  });
+  const formattCards: Card[] = cards
+    .filter((card) => card.imageUrl)
+    .map((card) => {
+      const formattCard: Card = {
+        name: card.name,
+        imageUrl: card.imageUrl,
+        cmc: card.cmc,
+        rarity: card.rarity,
+        set: card.set,
+        color: card.colors,
+        originalType: card.originalType,
+      };
+
+      return formattCard;
+    });
   return formattCards;
 }
