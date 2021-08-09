@@ -73,21 +73,5 @@ export function magicCard({
       }),
     ],
   });
-
   return character;
 }
-// const addCard = document.querySelector('.glowOnHover');
-
-// addCard.onclick = function (event) {
-//   const wishCard = {
-//     whishCardName: name,
-//     whishCardImageUrl: imageUrl,
-//     whishCardCmc: cmc,
-//     whishCardRarity: rarity,
-//     whishCardSet: set,
-//     whishCardColor: color,
-//     whishCardOriginalType: originalType,
-//   };
-//   // parseJSONFromLocalStorage('cards', wishCard);
-//   stringifyJSONToLocalStorage('cards', wishCard);
-// };
